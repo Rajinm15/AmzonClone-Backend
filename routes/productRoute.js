@@ -1,5 +1,5 @@
 const express = require("express")
-const { createProduct, getAllProduct, productDetailPage ,deteleProduct, updateProduct, ratting, uploadImages} = require("../controller/productControllerl")
+const { createProduct, getAllProduct, productDetailPage ,deteleProduct, updateProduct, ratting, uploadImages, deleteImages} = require("../controller/productControllerl")
 const { isAdmin, authmiddleware } = require("../middleware/authMiddlerware")
 const { uploadPhoto, productImgResize } = require("../middleware/uploadImages")
 
@@ -12,6 +12,6 @@ router.put("/ratting",authmiddleware,ratting)
 router.delete("/deleteProduct/:id",authmiddleware,isAdmin,deteleProduct)
 router.put("/updateProduct/:id",authmiddleware,isAdmin,updateProduct)
 router.put("/upload/:id",authmiddleware,isAdmin,uploadPhoto.array('images',10),productImgResize,uploadImages)
-
+router.delete("/delete/:id",authmiddleware,isAdmin,deleteImages)
 
 module.exports= router

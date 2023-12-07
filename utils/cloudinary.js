@@ -28,7 +28,7 @@ const cloudinaryUploadImg = async(fileToUploads)=>{
 
 const cloudinaryDeleteImage = async(fileToDelete)=>{
   return new Promise((resolve) => {
-      cloudinary.uploader.upload(fileToUploads, (result) => {
+      cloudinary.uploader.destroy(fileToDelete, (result) => {
         resolve(
           {
             url: result.secure_url,
@@ -45,4 +45,4 @@ const cloudinaryDeleteImage = async(fileToDelete)=>{
 }
 
 
-module.exports = cloudinaryUploadImg
+module.exports = {cloudinaryUploadImg,cloudinaryDeleteImage}

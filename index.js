@@ -13,6 +13,7 @@ const blogCategory = require("./routes/blogCategoryRoute")
 const brandRoute = require("./routes/brandRoute")
 const couponRoute = require("./routes/couponRoute")
 const colorRoute = require("./routes/colorRoute")
+const enqRoute  = require("./routes/enqRoute")
 const morgan = require("morgan")
 
 const app = express()
@@ -42,6 +43,7 @@ app.use("/api/blogCategory",blogCategory)
 app.use("/api/brand",brandRoute)
 app.use("/api/coupon",couponRoute)
 app.use("/api/color",colorRoute)
+app.use("/api/enq",enqRoute)
 
 
 //middleware
