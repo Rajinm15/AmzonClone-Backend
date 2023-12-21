@@ -4,6 +4,7 @@ import Layout from './component/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import ContactUs from './pages/ContactUs'
+import './App.css'
 
 
 const App = () => {
